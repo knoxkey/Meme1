@@ -485,6 +485,7 @@
 				E5C81C1C1CADB6BD00189962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C81C1D1CADB6BD00189962 /* Build configuration list for PBXNativeTarget "PKKMeme2Tests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				E5C81C1F1CADB6BD00189962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C81C201CADB6BD00189962 /* Build configuration list for PBXNativeTarget "PKKMeme2UITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +503,7 @@
 				E5C81C221CADB6BD00189962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
