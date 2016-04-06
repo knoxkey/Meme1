@@ -85,9 +85,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityButton" destination="bld-Lw-hsY" id="32A-M0-jOs"/>
                         <outlet property="bottomText" destination="Ae1-Ul-Z7L" id="wSq-94-Msi"/>
                         <outlet property="cameraButton" destination="nn3-X7-5fT" id="E1z-KD-MkJ"/>
                         <outlet property="imagePickerView" destination="Kba-Hv-8V7" id="8Ah-Si-dtx"/>
+                        <outlet property="toolBar" destination="454-5X-U1B" id="VUr-wT-bsx"/>
                         <outlet property="topText" destination="7vz-yd-Vh7" id="LeF-15-Oed"/>
                     </connections>
                 </viewController>

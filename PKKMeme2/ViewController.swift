@@ -15,7 +15,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var activityButton: UIBarButtonItem!
 
+    @IBOutlet weak var toolBar: UIToolbar!
 
 
     //Set attributes of meme text fields
@@ -51,9 +53,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         //Call func to subscribe to Keyboard Notifications
         self.subscribeToKeyboardNotifications()
-
-        //Disable camera button if device has no camera
+        //Disable Camera Button if device has no camera
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        if imagePickerView.image == nil {
+            activityButton.enabled = false
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -84,6 +88,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePickerView.image = image
         }
         dismissViewControllerAnimated(true, completion: nil)
+        //Enable to share button
+        activityButton.enabled = true
     }
 
     //Handle the cancel button on image picker
@@ -123,7 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    //Reppostion screen image when keyboard is hidden
+    //Repostion screen image when keyboard is hidden
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
             self.view.frame.origin.y += getKeyboardHeight(notification)
@@ -165,26 +171,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             activityItems: [memedImage as UIImage],
             applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
+        //Save Memed Image
+        save(memedImage)
     }
 
     //Create memed image that combines the Image View and Text fields
     func generateMemedImage() -> UIImage {
-        //TODO - hide tool and nav bars
-        //render view to an image
+        //Hide tool and nav bars
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        toolBar.hidden = true
+        //Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        //TODO - show bars
+        //Show tool and nav bars
+        self.navigationController?.setToolbarHidden(false, animated: false)
+        toolBar.hidden = false
 
         return memedImage
     }
 
 
-    func save() {
-        //Create the meme
+    func save(memedimage: UIImage) {
+        //Create the meme struct object
         let memedImage = generateMemedImage()
-        let meme = Meme( topLine: topText.text!, bottomLine: bottomText.text!, imageView:
+        var meme = Meme( topLine: topText.text!, bottomLine: bottomText.text!, imageView:
             imagePickerView.image!, memedImage: memedImage)
     }
 }
