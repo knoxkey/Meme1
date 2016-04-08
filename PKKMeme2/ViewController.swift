@@ -18,8 +18,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var activityButton: UIBarButtonItem!
 
-    //var completionWithItemsHandler: UIActivityViewControllerCompletionWithItemsHandler?
-
     //Define attributes for meme text fields
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
