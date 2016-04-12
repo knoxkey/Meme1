@@ -60,19 +60,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     //MARK:- Button Actions
-    //Album button - present controller to pick an album image
+    //Album button - call picker using Photo Album
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(pickerController, animated: true, completion: nil)
+        presentPickerController(.PhotoLibrary)
     }
 
-    //Camera button - present the camera to take a photo
+    //Camera button - call picker using Camera
     @IBAction func pickanIMageFromCamera(sender: AnyObject) {
+        presentPickerController(.Camera)
+    }
+
+    //Present pickerController for image selection
+    func presentPickerController(sourceType: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        pickerController.sourceType = sourceType
         presentViewController(pickerController, animated: true, completion: nil)
     }
 
