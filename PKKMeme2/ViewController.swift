@@ -145,14 +145,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Raise screen image so bottom text is not obscured by keyboard
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
-        }
+            view.frame.origin.y = getKeyboardHeight(notification) * -1        }
     }
 
     //Repostion screen image when keyboard is hidden
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
 
@@ -197,9 +196,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 }
 
-struct Meme {
-    var topLine: String
-    var bottomLine: String
-    var imageView: UIImage
-    var memedImage: UIImage
-}
