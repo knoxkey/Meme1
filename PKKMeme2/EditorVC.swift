@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EditorVC.swift
 //  PKKMeme2
 //
 //  Created by KNOX KEY on 3/31/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     //MARK:- Initialize Variables
     @IBOutlet weak var topText: UITextField!
@@ -82,6 +82,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(sender: AnyObject) {
         imagePickerView.image = nil
         viewDidLoad()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     //Handle share button - present Activity veiew
@@ -164,8 +165,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     //MARK:- Keyboard Notification functions
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EditorVC.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EditorVC.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
 
     func unsubscribeFromKeyboardNotifications() {
@@ -197,6 +198,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        print("stored it")
     }
 }
 
