@@ -42,7 +42,7 @@ class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         //set image and text
         cell.imageView?.image = meme.imageView
         //cell.textLabel?.text = meme.topLine
-        cell.textLabel?.text = String(meme.topLine.characters.prefix(9))
+        cell.textLabel?.text = String(meme.topLine.characters.prefix(10)) + "..." + String(meme.bottomLine.characters.prefix(10))
         return cell
     }
 

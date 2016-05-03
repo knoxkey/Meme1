@@ -19,6 +19,12 @@ class MemeCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+
         //let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         //memes = applicationDelegate.memes
     }

@@ -125,6 +125,8 @@ class EditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         if textField.text == "TOP" {
             textField.text = ""
         }
+        //Disable share function while editing text
+        activityButton.enabled = false
         return true
     }
 
@@ -139,6 +141,7 @@ class EditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             }
         }
         textField.resignFirstResponder()
+        activityButton.enabled = true
         return true
     }
 

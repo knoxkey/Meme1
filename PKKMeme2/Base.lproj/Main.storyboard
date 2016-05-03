@@ -49,17 +49,20 @@
                             <outlet property="delegate" destination="xLW-j4-ljQ" id="hG7-zI-wzk"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="EZT-P7-oup">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="EZT-P7-oup">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Oy-zz-dGp">
                             <connections>
                                 <segue destination="GLx-47-M6C" kind="modal" id="oua-2r-1u0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="sel-EX-crJ" id="tNT-en-xhj"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWO-Pa-urS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-689"/>
+            <point key="canvasLocation" x="-124" y="-504"/>
         </scene>
         <!--EditorVC-->
         <scene sceneID="tne-QT-ifu">
@@ -143,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="65" y="218"/>
         </scene>
-        <!--Memed Image-->
+        <!--Meme Detail View Controller-->
         <scene sceneID="jM2-Aa-R1y">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" title="Memed Image" id="QLx-EH-xni" customClass="MemeDetailViewController" customModule="PKKMeme2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="QLx-EH-xni" customClass="MemeDetailViewController" customModule="PKKMeme2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oej-Ol-ME7"/>
                         <viewControllerLayoutGuide type="bottom" id="N3H-yp-dF2"/>
@@ -155,7 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bee-Mi-WU8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bee-Mi-WU8">
                                 <rect key="frame" x="0.0" y="15" width="320" height="572"/>
                             </imageView>
                         </subviews>
@@ -173,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTJ-E4-nf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="180"/>
+            <point key="canvasLocation" x="489" y="218"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J8q-F4-gR6">
@@ -216,7 +219,7 @@
                             <outlet property="delegate" destination="H0Z-KX-a9O" id="CQ6-b7-vd4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gNO-Ch-Qh1">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="gNO-Ch-Qh1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f2Q-cA-lDq">
                             <connections>
                                 <segue destination="GLx-47-M6C" kind="modal" id="fBx-tB-Ht9"/>
@@ -229,7 +232,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txJ-WE-nAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="648"/>
+            <point key="canvasLocation" x="-102" y="962"/>
         </scene>
         <!--Table-->
         <scene sceneID="wsE-3S-nAW">
@@ -263,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlf-sT-chh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-572" y="-426"/>
+            <point key="canvasLocation" x="-554" y="-511"/>
         </scene>
         <!--Editor Navigation Controller-->
         <scene sceneID="x72-ky-fnd">
@@ -287,7 +290,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBU-wA-wsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560" y="210"/>
+            <point key="canvasLocation" x="-481" y="245"/>
         </scene>
     </scenes>
     <resources>
